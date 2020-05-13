@@ -26,7 +26,7 @@ class SquidK8SCharm(CharmBase):
         self.framework.observe(self.on.install, self.on_install)
         self.framework.observe(self.on.start, self.on_start)
         self.framework.observe(self.on.config_changed, self.on_config_changed)
-        self.framework.observe(self.on.addconfig.action, self.on_addconfig_action)
+#        self.framework.observe(self.on.addconfig.action, self.on_addconfig_action)
         # -- initialize states --
         self.state.set_default(installed=False)
         self.state.set_default(configured=False)
