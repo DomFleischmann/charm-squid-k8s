@@ -1,0 +1,7 @@
+addconfig:
+    description: "Add squid config"
+    params:
+        config-content:
+            description: "Content of /etc/squid/squid.conf"
+            type: string
+            default: ""
