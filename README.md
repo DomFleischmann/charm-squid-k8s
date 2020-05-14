@@ -5,8 +5,10 @@
 This is a Kuberentes Charm to deploy [Squid Cache](http://www.squid-cache.org/).
 
 Sugested Actions for this charm:
-* Pass custom squid.conf to the container
-* Stop/Start/Restart the squid service
+* Pass custom squid.conf to the container - done
+  Possible way to run action: `cat squid.conf | xargs -I arg juju run-action squid/0 addconfig config-content=arg`
+* Stop/Start/Restart the squid service - done
+  Run like this: `juju run-action squid/0 restart`
 * Set ftp, http, https proxies
 
 ## Quickstart

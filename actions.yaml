@@ -5,3 +5,9 @@ addconfig:
             description: "Content of /etc/squid/squid.conf"
             type: string
             default: ""
+start:
+    description: "Start squid service"
+restart:
+    description: "Retart squid service"
+stop:
+    description: "Stop squid service"
