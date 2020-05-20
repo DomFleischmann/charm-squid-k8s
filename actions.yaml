@@ -1,8 +1,8 @@
-addconfig:
+addurl:
     description: "Add squid config"
     params:
-        config-content:
-            description: "Content of /etc/squid/squid.conf"
+        url:
+            description: "URL that will be allowed"
             type: string
             default: ""
 start:

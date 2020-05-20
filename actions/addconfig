@@ -1,6 +1,0 @@
-#!/bin/bash
-CONTENT=`action-get config-content`
-
-cat $CONTENT > /etc/squid/squid.conf
-
-service squid restart

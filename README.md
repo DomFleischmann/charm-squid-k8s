@@ -5,8 +5,8 @@
 This is a Kuberentes Charm to deploy [Squid Cache](http://www.squid-cache.org/).
 
 Sugested Actions for this charm:
-* Pass custom squid.conf to the container - done
-  Possible way to run action: `cat squid.conf | xargs -I arg juju run-action squid/0 addconfig config-content=arg`
+* Set allowed URLs
+  Possible way to run action: `juju run-action squid/0 addurl url=google.com`
 * Stop/Start/Restart the squid service - done
   Run like this: `juju run-action squid/0 restart`
 * Set ftp, http, https proxies
@@ -29,6 +29,18 @@ git submodule update --init
 juju deploy .
 ```
 Check if the charm is deployed correctly with `juju status`
+
+To test the `addurl` action open another terminal and type the following command:
+`export https_proxy=http://<squid-ip>:3128`
+
+Where squid-ip is the Squid App Address shown in `juju status`
+
+Now when executing `curl https://www.google.com` squid will block access to the url
+
+Execute the `addurl` action:
+`juju run-action squid/0 addurl url=google.com`
+
+Now when executing `curl https://www.google.com` it will give you the google output.
 
 ## Contact
  - Author: Dominik Fleischmann <dominik.fleischmann@canonical.com>
