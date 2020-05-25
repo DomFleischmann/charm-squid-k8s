@@ -44,4 +44,4 @@ Now when executing `curl https://www.google.com` it will give you the google out
 
 ## Contact
  - Author: Dominik Fleischmann <dominik.fleischmann@canonical.com>
- - Bug Tracker: [here](https://github.com/DomFleischmann/charm-squid-k8s)
+ - Bug Tracker: [here](https://github.com/charmed-osm/charm-squid-k8s)
