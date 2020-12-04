@@ -1,4 +1,4 @@
-# squid-k8s Charm
+# squid
 
 ## Overview
 
@@ -19,14 +19,16 @@ sudo snap install juju --classic
 sudo snap install microk8s --classic
 juju bootstrap microk8s
 juju add-model squid
+juju deploy cs:~charmed-osm/squid
 ```
 
-Afterwards clone the repository and deploy the charm
+# Building it locally
+
 ```
-git clone https://github.com/DomFleischmann/charm-squid-k8s.git
-cd charm-squid-k8s
-git submodule update --init
-juju deploy .
+git clone https://github.com/charmed-osm/squid-operator.git
+cd squid-operator
+charmcraft build
+juju deploy ./squid.charm --resources image=domfleischmann/squid-python
 ```
 Check if the charm is deployed correctly with `juju status`
 
@@ -44,4 +46,4 @@ Now when executing `curl https://www.google.com` it will give you the google out
 
 ## Contact
  - Author: Dominik Fleischmann <dominik.fleischmann@canonical.com>
- - Bug Tracker: [here](https://github.com/charmed-osm/charm-squid-k8s)
+ - Bug Tracker: [here](https://github.com/DomFleischmann/charm-squid-k8s)

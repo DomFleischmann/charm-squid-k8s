@@ -10,17 +10,15 @@ tags:
     - misc
 series:
     - kubernetes
+deployment:
+    type: stateful
+    service: loadbalancer
 storage:
-    docker:
-        type: filesystem
-        location: /srv/docker/squid
     spool:
         type: filesystem
         location: /var/spool/squid
-# -- example relations, delete if unneeded
-#requires:
-#    db:
-#        interface: mysql
-#provides:
-#    website:
-#        interface: http
+resources:
+  image:
+    type: oci-image
+    description: OSM docker image for LCM
+    upstream-source: "domfleischmann/squid-python"

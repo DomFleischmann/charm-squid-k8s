@@ -1,9 +1,5 @@
 options:
-    image:
-        type: string
-        description: 'Docker image for squid'
-        default: 'sameersbn/squid:latest'
     port:
         type: int
-        description: 'Port'
+        description: "Port"
         default: 3128

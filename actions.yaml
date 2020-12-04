@@ -1,13 +1,14 @@
 addurl:
-    description: "Add squid config"
+    description: "Add allowed URL to squid config"
     params:
         url:
             description: "URL that will be allowed"
             type: string
             default: ""
-start:
-    description: "Start squid service"
-restart:
-    description: "Retart squid service"
-stop:
-    description: "Stop squid service"
+deleteurl:
+    description: "Delete allowed URL squid config"
+    params:
+        url:
+            description: "URL that will stop to be allowed"
+            type: string
+            default: ""
