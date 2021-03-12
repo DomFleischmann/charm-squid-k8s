@@ -1,0 +1,11 @@
+-r requirements.txt
+coverage
+stestr
+mock
+black
+yamllint
+flake8
+safety
+requests-mock
+asynctest
+nose2

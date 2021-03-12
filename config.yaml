@@ -1,5 +1,4 @@
 options:
-    port:
-        type: int
-        description: "Port"
-        default: 3128
+    enable-exporter:
+        type: boolean
+        description: Set to True for enabling node exporter

@@ -2,11 +2,11 @@
 
 ## Overview
 
-This is a Kuberentes Charm to deploy [Squid Cache](http://www.squid-cache.org/).
+This is a Kubernetes Charm to deploy [Squid Cache](http://www.squid-cache.org/).
 
 Sugested Actions for this charm:
 * Set allowed URLs
-  Possible way to run action: `juju run-action squid/0 addurl url=google.com`
+  Possible way to run action: `juju run-action squid/0 add-url url=google.com`
 * Stop/Start/Restart the squid service - done
   Run like this: `juju run-action squid/0 restart`
 * Set ftp, http, https proxies
@@ -24,12 +24,13 @@ juju deploy cs:~charmed-osm/squid
 
 # Building it locally
 
-```
+```bash
 git clone https://github.com/charmed-osm/squid-operator.git
 cd squid-operator
 charmcraft build
-juju deploy ./squid.charm --resources image=domfleischmann/squid-python
+juju deploy ./squid.charm --resources image=davigar15/squid:latest
 ```
+
 Check if the charm is deployed correctly with `juju status`
 
 To test the `addurl` action open another terminal and type the following command:
@@ -40,10 +41,10 @@ Where squid-ip is the Squid App Address shown in `juju status`
 Now when executing `curl https://www.google.com` squid will block access to the url
 
 Execute the `addurl` action:
-`juju run-action squid/0 addurl url=google.com`
+`juju run-action squid/0 add-url url=google.com`
 
 Now when executing `curl https://www.google.com` it will give you the google output.
 
 ## Contact
- - Author: Dominik Fleischmann <dominik.fleischmann@canonical.com>
- - Bug Tracker: [here](https://github.com/DomFleischmann/charm-squid-k8s)
+ - Author: David García
+ - Bug Tracker: [here](https://github.com/charmed-osm/squid-operator)

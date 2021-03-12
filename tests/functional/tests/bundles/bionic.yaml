@@ -1,6 +1,0 @@
-series: bionic
-
-applications:
-    squid:
-        charm: ../../../../
-        num_units: 1

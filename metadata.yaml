@@ -1,24 +1,29 @@
 name: squid
-summary: Describe your charm here
+summary: Kubernetes operator for Squid
 maintainers:
-    - Dominik Fleischmann <dominik.fleischmann@canonical.com>
+    - David García <david.garcia@canonical.com>
 description: |
-    A nice long description of what the product does and any
-    high level information about how the charm provides the product,
-    on which platform, etc.
+    Squid is a caching proxy for the Web supporting HTTP, HTTPS, FTP, and more.
+    It reduces bandwidth and improves response times by caching and reusing
+    frequently-requested web pages. Squid has extensive access controls and
+    makes a great server accelerator. It runs on most available operating
+    systems, including Windows and is licensed under the GNU GPL.
 tags:
-    - misc
+    - proxy
+    - firewall
+    - web
 series:
     - kubernetes
 deployment:
-    type: stateful
     service: loadbalancer
-storage:
-    spool:
-        type: filesystem
-        location: /var/spool/squid
 resources:
-  image:
-    type: oci-image
-    description: OSM docker image for LCM
-    upstream-source: "domfleischmann/squid-python"
+    image:
+        type: oci-image
+        description: Docker image for squid
+        upstream-source: "davigar15/squid:latest"
+provides:
+    prometheus-target:
+        interface: http
+peers:
+    cluster:
+        interface: squid-cluster
