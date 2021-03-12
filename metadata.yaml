@@ -14,8 +14,6 @@ tags:
     - web
 series:
     - kubernetes
-deployment:
-    service: loadbalancer
 resources:
     image:
         type: oci-image

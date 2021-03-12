@@ -1,14 +1,1 @@
-add-url:
-    description: "Add allowed URL to squid config"
-    params:
-        url:
-            description: "URL that will be allowed"
-            type: string
-            default: ""
-delete-url:
-    description: "Delete allowed URL squid config"
-    params:
-        url:
-            description: "URL that will stop to be allowed"
-            type: string
-            default: ""
+{}
